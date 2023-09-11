@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-
+import 'bootstrap/dist/js/bootstrap.min.js'
 </script>
 
 <template>
@@ -21,6 +21,8 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+@import 'bootstrap/dist/css/bootstrap.min.css'
+
 header {
   line-height: 1.5;
   max-height: 100vh;
