@@ -1,85 +1,100 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import 'bootstrap/dist/js/bootstrap.min.js'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="65" height="65" />
+      <div>
+        <ul>
+          <li><router-link to="/">Go to Home</router-link></li>
+          <li class="has-submenu">
+            <a href="#">Strażacy <span class="arrow">▼</span></a>
+            <ul class="submenu">
+              <li><RouterLink to="/FiremanList/list">Lista</RouterLink></li>
+              <li><RouterLink to="/fireman/add">Dodaj</RouterLink></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#">Finanse <span class="arrow">▼</span></a>
+            <ul class="submenu">
+              <li><RouterLink to="/FinanceList/list/:id">Lista</RouterLink></li>
+              <li><RouterLink to="/finance/add/:id">Dodaj</RouterLink></li>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+/* Twój istniejący styl pozostaje bez zmian */
+ul {
+  list-style-type: none;
+  padding: 0;
   text-align: center;
-  margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
+li {
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  position: relative;
 }
 
-nav a:first-of-type {
-  border: 0;
+a {
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+a:hover {
+  background-color: #555;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #555;
+  z-index: 1;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+li:hover ul {
+  display: block;
+}
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+ul ul li {
+  display: block;
+  width: 100%;
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.has-submenu > a .arrow {
+  padding-left: 5px;
+  transition: transform 0.3s;
+}
+
+.arrow {
+  color: #fff;
+  font-size: 12px;
+  vertical-align: middle;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.has-submenu:hover > a .arrow {
+  transform: rotateX(180deg);
+}
+
+.submenu a .arrow {
+  content: none;
 }
 </style>
