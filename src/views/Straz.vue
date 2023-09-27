@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import PersonalData from '@/components/PersonalData.vue';
-import czlonkostwo from '@/components/czlonkostwo.vue';
-import UmundorowanieMDP from '@/components/UmundorowanieMDP.vue';
-import Umundorowanie from '@/components/Umundorowanie.vue';
-import Badania from '@/components/Badania.vue';
-import Szkolenia from '@/components/Szkolenia.vue';
-import medale from '@/components/medale.vue';
-import finanse from '@/components/finanse.vue';
+import Membership from '@/components/Membership.vue';
+import UniformsMDP from '@/components/UniformsMDP.vue';
+import Uniforms from '@/components/Uniforms.vue';
+import Tests from '@/components/Tests.vue';
+import Training from '@/components/Training.vue';
+import Medals from '@/components/Medals.vue';
+import Finances from '@/components/Finances.vue';
 
 
  
@@ -49,25 +49,25 @@ import finanse from '@/components/finanse.vue';
         <PersonalData />
       </div>
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <czlonkostwo/>
+        <Membership/>
       </div>
       <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <UmundorowanieMDP/>
+        <UniformsMDP/>
       </div>
       <div class="tab-pane fade" id="1" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <Umundorowanie/>
+        <Uniforms/>
       </div>
       <div class="tab-pane fade" id="2" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <Badania/>
+        <Tests />
       </div>
       <div class="tab-pane fade" id="3" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <Szkolenia/>
+        <Training/>
       </div>
       <div class="tab-pane fade" id="4" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <medale/>
+        <Medals/>
       </div>
       <div class="tab-pane fade" id="5" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <finanse/>
+        <Finances/>
       </div>
     </div>
 
